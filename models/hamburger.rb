@@ -11,15 +11,10 @@ class Hamburger
   def calories
     sum = 0
 
-    @condiments.each do | condiment | 
-    
-      if condiment.respond_to? "calories"
-        sum += condiment.calories
-      end
-    
+    @condiments.each do | condiment |
+      sum += condiment.calories if condiment.respond_to? "calories"
     end
 
     return @base_calories + sum
-
   end
 end

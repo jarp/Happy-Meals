@@ -7,20 +7,19 @@ class HappyMeal
     @toy = toy
   end
 
-  # I would also show that attr_reader :price is the same as this and
-  # mention that attr_accessor :price handles both reader and writer.
   def price
     @price
   end
 
-  # I would also show that attr_writer :price is the same as this and
-  # mention that attr_accessor :price handles both reader and writer.
   def price=(price)
     @price = price
   end
 
-
   def calories
     @drink.calories + @side.calories + @main.calories
+  end
+
+  def to_s
+    puts "This happy meal is composed of #{@drink}, #{@main}, #{@side}, and #{@toy}"
   end
 end
